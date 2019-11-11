@@ -1,0 +1,112 @@
+.home {
+
+}
+
+.chat {
+  display: flex;
+  height: 100%;
+  background: #fff;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1140px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.04204);
+  overflow: hidden;
+  &__sidebar {
+    width: 320px;
+    border-right: 1px solid #F7F7F7;
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 60px;
+      min-height: 60px;
+      padding: 10px 20px;
+      border-bottom: 1px solid #F7F7F7;
+      .anticon {
+        font-size: 18px;
+        color: inherit;
+        &-team {
+          margin-right: 8px;
+        }
+      }
+      .label {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #202020;
+        opacity: 0.65;
+      }
+    }
+    &-dialogs {
+      overflow: auto;
+      height: calc(100% - 60px);
+      position: relative;
+    }
+  }
+  &__dialog {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 60px;
+      min-height: 60px;
+      width: 100%;
+      padding: 8px 60px;
+      border-bottom: 1px solid #F7F7F7;
+      &-center {
+        text-align: center;
+      }
+      &-username {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: #202020;
+      }
+
+      .ant-btn-circle  {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 22px;
+      }
+    }
+    &-messages {
+      height: calc(100% - 60px);
+      padding: 20px 20px  0;
+      overflow: auto;
+      position: relative;
+      > * {
+        &:last-child {
+          .message__content {
+            margin-bottom: 0!important;
+          }
+        }
+      }
+    }
+    &-input {
+      padding: 20px;
+    }
+
+    .ant-empty {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0 auto;
+    }
+  }
+}
+
+

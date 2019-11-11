@@ -1,0 +1,76 @@
+.auth {
+  min-height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  &--content {
+    width: 100%;
+  }
+  &--top {
+    text-align: center;
+    margin-bottom: 50px;
+    h2 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1;
+      letter-spacing: 0.1px;
+      opacity: 0.5;
+    }
+  }
+  &--register-link {
+    font-weight: normal;
+    font-size: 16px;
+    letter-spacing: 0.1px;
+    color: #ADADAD;
+  }
+
+  &--success-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 400px;
+    .icon {
+      text-align: center;
+    }
+    h3 {
+      font-size: 22px;
+      line-height: 1.2;
+      margin-top: 10px;
+      margin-bottom: 14px;
+    }
+    p {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.5;
+      letter-spacing: 0.1px;
+      opacity: 0.5;
+    }
+  }
+
+  .block {
+    display: inline-block;
+    width: 100%;
+    max-width: 430px;
+  }
+
+  .button {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.1px;
+    width: 100%;
+  }
+
+  .ant-form-explain, .ant-form-extra {
+    text-align: left;
+  }
+
+}

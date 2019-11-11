@@ -1,0 +1,197 @@
+@import "~styles/variables";
+
+.message {
+  $self: &;
+  &__content {
+    display: flex;
+    max-width: 440px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  &__icon-readed {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+  }
+  &__avatar {
+    display: flex;
+    flex-direction: column-reverse;
+    img {
+      border-radius: 50%;
+      width: 33px;
+      height: 33px;
+      margin-right: 14px;
+      margin-bottom: 24px;
+    }
+  }
+  &__bubble {
+    padding: 15px;
+    background: $blue;
+    box-shadow: 0 5px 5px rgba(54, 116, 255, 0.196733);
+    border-radius: 12px 12px 12px 0;
+    margin-bottom: 10px;
+  }
+  &__text {
+    color: #fff;
+    line-height: 20px;
+  }
+  &__date {
+    display: block;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.1;
+    opacity: 0.5;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+  &__attachments {
+    display: flex;
+    margin-bottom: 5px;
+    &-item {
+      font-size: 0;
+      margin-right: 5px;
+      cursor: pointer;
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__typing {
+    span {
+      height: 8px;
+      width: 8px;
+      float: left;
+      margin-right: 8px;
+      background-color: $message-typing-circle;
+      display: block;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation-timing-function: ease-in-out;
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          animation: 1.2s typingAnimation infinite ($i * .3333s);
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__is-typing {
+    #{$self}__bubble {
+      background: $message-typing-blue;
+      box-shadow: 0 5px 5px rgba(54, 116, 255, 0.05);
+      padding: 15px 18px;
+    }
+  }
+
+  &__image {
+    #{$self}__attachments-item {
+      img {
+        width: 170px;
+        height: 170px;
+      }
+    }
+  }
+
+  &__isme {
+    display: flex;
+    flex-direction: row-reverse;
+    #{$self}__content {
+      margin-bottom: 15px;
+      padding-left: 24px;
+      flex-direction: row-reverse;
+    }
+    #{$self}__avatar {
+      img {
+        margin-right: 0;
+        margin-left: 14px;
+      }
+    }
+    #{$self}__bubble {
+      background: #FFFFFF;
+      border: 1px solid #ECECEC;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.0220444);
+      border-radius: 12px 12px 0 12px;
+    }
+    #{$self}__text {
+      color: $black;
+    }
+    #{$self}__date {
+      text-align: right;
+    }
+  }
+
+  &__is-audio {
+    #{$self}__bubble {
+      width: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+    #{$self}__audio {
+      &-progress {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 0;
+        background: #418FFF;
+        transition: width 0.3s ease 0s;
+      }
+      &-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+      }
+      &-btn {
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 28px;
+          height: 28px;
+          background: #0F3997;
+          border-radius: 50%;
+          padding: 0;
+          margin: 0;
+          border: none;
+          cursor: pointer;
+          outline: none;
+          img {
+            height: 11px;
+          }
+        }
+
+      }
+      &-duration {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: #FFFFFF;
+        opacity: 0.5;
+      }
+    }
+
+    audio {
+      display: none;
+    }
+  }
+
+  //#{$self}
+}
+
+
+@keyframes typingAnimation {
+  50% {
+    opacity: 1;
+  }
+}

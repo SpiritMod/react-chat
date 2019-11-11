@@ -1,0 +1,106 @@
+//@import "~styles/variables";
+//
+//.dialogs {
+//  &__item {
+//    display: flex;
+//    align-items: center;
+//    max-width: 100%;
+//    padding: 10px 20px;
+//    $item: &;
+//    &-avatar {
+//      position: relative;
+//      width: 40px;
+//      height: 40px;
+//      min-width: 40px;
+//      margin-right: 10px;
+//      img {
+//        width: 100%;
+//        height: auto;
+//        border-radius: 50%;
+//      }
+//    }
+//    &-info {
+//      overflow: hidden;
+//      &-top {
+//        display: flex;
+//        margin-bottom: 5px;
+//        b {
+//          flex: 1;
+//          font-weight: 500;
+//          font-size: 14px;
+//          line-height: 16px;
+//        }
+//        span {
+//          font-size: 12px;
+//          line-height: 14px;
+//          color: rgba(#202020,0.4);
+//        }
+//      }
+//      &-bottom {
+//        display: flex;
+//        align-items: center;
+//        //position: relative;
+//        //padding-right: 24px;
+//        .text {
+//          flex: 1;
+//          min-width: 0;
+//          p {
+//            font-weight: normal;
+//            font-size: 14px;
+//            line-height: 16px;
+//            color: rgba(#202020,0.4);
+//            white-space: nowrap;
+//            overflow: hidden;
+//            text-overflow: ellipsis;
+//          }
+//        }
+//        img {
+//          position: relative;
+//          display: inline-flex;
+//          align-items: flex-start;
+//          justify-content: flex-start;
+//          bottom: inherit;
+//          left: inherit;
+//          width: auto;
+//          height: 10px;
+//          margin-left: 4px;
+//        }
+//      }
+//    }
+//    &-unread-count {
+//      position: relative;
+//      display: inline-flex;
+//      align-items: center;
+//      justify-content: center;
+//      background: #F46B6B;
+//      min-width: 18px;
+//      width: auto;
+//      height: 18px;
+//      border-radius: 9px;
+//      color: #fff;
+//      font-size: 11px;
+//      line-height: 2;
+//      padding: 0 4px;
+//      margin-left: 4px;
+//    }
+//
+//    &-online {
+//      #{$item}-avatar {
+//        &:before {
+//          content: '';
+//          display: block;
+//          position: absolute;
+//          right: 1px;
+//          bottom: -3px;
+//          width: 14px;
+//          height: 14px;
+//          border: 3px solid #fff;
+//          background: $green;
+//          border-radius: 50%;
+//        }
+//      }
+//    }
+//  }
+//}
+//
+//
