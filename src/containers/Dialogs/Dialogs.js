@@ -1,11 +1,23 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Dialogs as BaseDialogs } from 'components';
 
-const Dialogs = ({ items, userId }) => {
+import { useDialogsFetch } from './hooks/useDialogsFetch';
+
+const Dialogs = ({ userId }) => {
+
+  const { items } = useDialogsFetch();
 
   const [inputValue, setValue] = useState('');
   const [filtred, setFiltredItems] = useState(Array.from(items));
+
+
+
+  useEffect(() => {
+    if (items.length) {
+      setFiltredItems(items);
+    }
+  }, [items]);
 
 
   const onChangeInput = value => {

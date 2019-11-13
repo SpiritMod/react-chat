@@ -4,7 +4,7 @@ import {Button, Icon} from 'antd';
 import { Messages, Status, ChatInput } from 'components';
 import { Dialogs } from 'containers';
 
-import dialogsJSON from 'dialogs.json';
+//import dialogsJSON from 'dialogs.json';
 
 import './Home.scss';
 
@@ -30,7 +30,7 @@ const Home = () => {
           </div>*/}
 
           <div className="chat__sidebar-dialogs">
-            <Dialogs userId={1} items={dialogsJSON}/>
+            <Dialogs userId={1} />
           </div>
 
         </div>
