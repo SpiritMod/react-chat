@@ -9,10 +9,15 @@ export const useDialogsFetch = () => {
   useEffect(() => {
     if (!items.length) {
       dispatch(dialogsActions.fetchDialogs());
+    } else {
+      //dispatch(dialogsActions.setDialogs(items))
     }
   }, [dispatch, items]);
 
+  const setCurrentDialogId = (id) => dispatch(dialogsActions.setCurrentDialogId(id));
+
   return {
-    items
+    items,
+    setCurrentDialogId
   }
 };

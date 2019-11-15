@@ -9,7 +9,7 @@ const success = false;
 
 const RegisterForm = props => {
   const {
-    values,
+    //values,
     touched,
     errors,
     handleChange,

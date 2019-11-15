@@ -1,0 +1,18 @@
+.messages {
+  height: 100%;
+  overflow: auto;
+  flex-direction: column;
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ant-spin {
+    //display: block;
+    //position: absolute;
+    //left: 50%;
+    //top: 50%;
+    //transform: translate(-50%, -50%);
+    //margin: 0 auto;
+  }
+}

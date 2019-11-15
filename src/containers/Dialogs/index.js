@@ -6,18 +6,16 @@ import { useDialogsFetch } from './hooks/useDialogsFetch';
 
 const Dialogs = ({ userId }) => {
 
-  const { items } = useDialogsFetch();
+  const { items, setCurrentDialogId } = useDialogsFetch();
 
   const [inputValue, setValue] = useState('');
   const [filtred, setFiltredItems] = useState(Array.from(items));
-
-
 
   useEffect(() => {
     if (items.length) {
       setFiltredItems(items);
     }
-  }, [items]);
+  }, [setFiltredItems, items]);
 
 
   const onChangeInput = value => {
@@ -38,6 +36,7 @@ const Dialogs = ({ userId }) => {
       items={filtred}
       onSearch={onChangeInput}
       inputValue={inputValue}
+      onSelectDialog={setCurrentDialogId}
     />
   );
 };

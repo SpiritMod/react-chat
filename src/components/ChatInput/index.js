@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Icon, Input, Button } from 'antd';
 //import PropTypes from 'prop-types';
-import classNames from 'classnames';
+//import classNames from 'classnames';
 
 import './ChatInput.scss';
 

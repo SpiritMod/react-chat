@@ -1,13 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Empty } from 'antd';
+import { Empty, Spin } from 'antd';
+import classNames from 'classnames';
 
 import { Message } from '../';
+import './Messages.scss';
 
-const Messages = ({ items }) => {
-  return items ? (
-    <div>
-      <Message
+const Messages = ({ blockRef, isLoading, currentDialogId, items }) => {
+  //const isLoading =  true;
+  //console.log('isLoading: ' + isLoading);
+  console.log(items);
+
+  return <div
+    ref={blockRef}
+    className={classNames('messages', {'messages__loading': isLoading})}
+  >
+    {
+      isLoading && !items ? (
+        <Spin size="large" tip="Загрузка сообщений..." />
+      ) : items.length ? (
+        items.map(item => <Message key={item._id} { ...item } />)
+      ) : (
+        <Empty description={currentDialogId ? 'Диалог пуст' : 'Откройте диалог'} />
+      )
+    }
+  </div>
+    /*<div>
+
+     {/!* <Message
         key='123-1'
         avatar='https://randomuser.me/api/portraits/women/44.jpg'
         date='Thu July 30 2019 14:27:02'
@@ -56,9 +76,8 @@ const Messages = ({ items }) => {
         key='123-5'
         avatar='https://randomuser.me/api/portraits/women/44.jpg'
         isTyping
-      ></Message>
-    </div>
-  ) : <Empty description="Нет сообщений"/>
+      ></Message>*!/}
+    </div>*/
 };
 
 Messages.propTypes = {

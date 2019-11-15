@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Time, IconReaded } from '../';
+import { Time, IconReaded, Avatar } from '../';
 
 import { convertCurrentTime } from 'utils/helpers';
 
@@ -10,6 +10,7 @@ import playSvg from 'assets/img/play.svg';
 import pauseSvg from 'assets/img/pause.svg';
 
 import './Message.scss';
+
 
 const MessageAudio = ({audioSrc}) => {
   const audioElem = useRef(null);
@@ -97,7 +98,8 @@ const Message = ({
       <div className="message__content">
         <IconReaded isMe={isMe} isReaded={isReaded} />
         <div className="message__avatar">
-          <img src={avatar} alt={`Avatar ${user.fullname}`}/>
+          <Avatar user={user}/>
+          {/*<img src={avatar} alt={`Avatar ${user.fullname}`}/>*/}
         </div>
         <div className="message__info">
           {
@@ -139,61 +141,6 @@ const Message = ({
     </div>
   )
 };
-
-// const Message1 = ({
-//                    avatar,
-//                    user,
-//                    text,
-//                    date,
-//                    audio,
-//                    isMe,
-//                    isReaded,
-//                    attachments,
-//                    isTyping
-//                  }) => (
-//   <div className={classNames('message', {
-//     'message__isme' : isMe,
-//     "message__is-typing": isTyping,
-//     "message__image": attachments && attachments.length === 1,
-//     "message__is-audio": audio
-//   } )}>
-//     <div className="message__content">
-//       <IconReaded isMe={isMe} isReaded={isReaded} />
-//       <div className="message__avatar">
-//         <img src={avatar} alt={`Avatar ${user.fullname}`}/>
-//       </div>
-//       <div className="message__info">
-//         {
-//           (text || isTyping) && (
-//             <div className="message__bubble">
-//               {text && <p className='message__text'>{text}</p>}
-//               {
-//                 isTyping &&
-//                 <div className="message__typing">
-//                   <span />
-//                   <span />
-//                   <span />
-//                 </div>
-//               }
-//             </div>
-//           )
-//         }
-//
-//         <div className="message__attachments">
-//           {
-//             attachments &&
-//             attachments.map(item => (
-//               <div className="message__attachments-item" >
-//                 <img src={item.url} alt={item.filename} />
-//               </div>
-//             ))
-//           }
-//         </div>
-//         {date && <span className="message__date"><Time date={date} /></span>}
-//       </div>
-//     </div>
-//   </div>
-// );
 
 Message.defaultProps = {
   user: {

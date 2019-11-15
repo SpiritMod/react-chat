@@ -7,7 +7,7 @@ import { DialogItem } from '../';
 
 import './Dialogs.scss';
 
-const Dialogs = ({ items, userId, onSearch, inputValue }) => {
+const Dialogs = ({ items, userId, onSearch, inputValue, onSelectDialog }) => {
   return (
     <div className="dialogs">
       <div className="dialogs dialogs__search">
@@ -23,6 +23,7 @@ const Dialogs = ({ items, userId, onSearch, inputValue }) => {
             <DialogItem
               key={item._id}
               isMe={item.user._id === userId}
+              onSelect={onSelectDialog}
               {...item}
             />
           )) : <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="Ничего не найдено"/>

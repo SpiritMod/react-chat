@@ -1,10 +1,8 @@
 import React from 'react';
 import {Button, Icon} from 'antd';
 
-import { Messages, Status, ChatInput } from 'components';
-import { Dialogs } from 'containers';
-
-//import dialogsJSON from 'dialogs.json';
+import { Status, ChatInput } from 'components';
+import { Dialogs, Messages } from 'containers';
 
 import './Home.scss';
 
@@ -22,13 +20,6 @@ const Home = () => {
             <Button type="link" shape="circle" icon="form" />
           </div>
 
-          {/*<div className="chat__sidebar-search">
-            <Input.Search
-              placeholder="Поиск среди контактов"
-              onSearch={value => console.log(value)}
-            />
-          </div>*/}
-
           <div className="chat__sidebar-dialogs">
             <Dialogs userId={1} />
           </div>
@@ -45,7 +36,7 @@ const Home = () => {
             <Button type="link" shape="circle" icon="ellipsis" />
           </div>
           <div className="chat__dialog-messages">
-            <Messages/>
+            <Messages />
           </div>
           <div className="chat__dialog-input">
             <ChatInput />
