@@ -27,10 +27,14 @@ const DialogItem = ({
   created_at,
   text,
   isMe,
-  onSelect
+  onSelect,
+  currentDialogId
 }) => (
   <div
-    className={classNames('dialogs__item', {'dialogs__item-online': user.isOnline})}
+    className={classNames('dialogs__item', {
+      'dialogs__item-online': user.isOnline,
+      'dialogs__item--selected': currentDialogId === _id
+    })}
     onClick={ () => { onSelect(_id) } }
   >
     <div className="dialogs__item-avatar">

@@ -2,12 +2,13 @@ import React from 'react';
 import { Input, Empty } from 'antd';
 import orderBy from 'lodash/orderBy';
 import { DialogItem } from '../';
-//import classNames from 'classnames';
+import classNames from 'classnames';
 //import isToday from 'date-fns/is_today';
 
 import './Dialogs.scss';
 
-const Dialogs = ({ items, userId, onSearch, inputValue, onSelectDialog }) => {
+const Dialogs = ({ items, currentDialogId, userId, onSearch, inputValue, onSelectDialog }) => {
+  console.log();
   return (
     <div className="dialogs">
       <div className="dialogs dialogs__search">
@@ -24,6 +25,7 @@ const Dialogs = ({ items, userId, onSearch, inputValue, onSelectDialog }) => {
               key={item._id}
               isMe={item.user._id === userId}
               onSelect={onSelectDialog}
+              currentDialogId={currentDialogId}
               {...item}
             />
           )) : <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="Ничего не найдено"/>

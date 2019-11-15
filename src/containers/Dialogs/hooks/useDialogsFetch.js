@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { dialogsActions } from '../../../redux/actions';
 
 export const useDialogsFetch = () => {
-  const { items } = useSelector((state) => state.dialogs);
+  const { items, currentDialogId } = useSelector((state) => state.dialogs);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,6 +18,7 @@ export const useDialogsFetch = () => {
 
   return {
     items,
+    currentDialogId,
     setCurrentDialogId
   }
 };

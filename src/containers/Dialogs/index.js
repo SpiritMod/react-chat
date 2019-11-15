@@ -6,7 +6,7 @@ import { useDialogsFetch } from './hooks/useDialogsFetch';
 
 const Dialogs = ({ userId }) => {
 
-  const { items, setCurrentDialogId } = useDialogsFetch();
+  const { items, currentDialogId, setCurrentDialogId } = useDialogsFetch();
 
   const [inputValue, setValue] = useState('');
   const [filtred, setFiltredItems] = useState(Array.from(items));
@@ -37,6 +37,7 @@ const Dialogs = ({ userId }) => {
       onSearch={onChangeInput}
       inputValue={inputValue}
       onSelectDialog={setCurrentDialogId}
+      currentDialogId={currentDialogId}
     />
   );
 };

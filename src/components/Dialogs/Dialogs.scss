@@ -27,11 +27,16 @@
     padding: 10px 20px;
     background-color: #fff;
     transition: background-color 0.2s ease 0s;
-    &.active {
-      background-color: rgba(#F3F7FF, 1);
+    color: rgba(#202020, 1);
+    &--selected {
+      background-color: rgba(#1890ff, 1);
+      color: #fff;
+      &:hover {
+        background-color: rgba(#1890ff, 1) !important;
+      }
     }
     &:hover {
-      background-color: rgba(#F3F7FF, 0.6);
+      background-color: rgba(#F3F7FF, 1);
     }
     &-avatar {
       position: relative;
@@ -60,6 +65,7 @@
     &-info {
       overflow: hidden;
       width: 100%;
+      color: inherit;
       &-top {
         display: flex;
         margin-bottom: 5px;
@@ -72,7 +78,8 @@
         span {
           font-size: 12px;
           line-height: 14px;
-          color: rgba(#202020,0.4);
+          color: inherit;
+          opacity: 0.4;
         }
       }
       &-bottom {
@@ -87,10 +94,11 @@
             font-weight: normal;
             font-size: 14px;
             line-height: 16px;
-            color: rgba(#202020,0.4);
+            color: inherit;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            opacity: 0.4;
           }
         }
         img {

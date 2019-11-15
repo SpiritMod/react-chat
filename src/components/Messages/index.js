@@ -7,10 +7,6 @@ import { Message } from '../';
 import './Messages.scss';
 
 const Messages = ({ blockRef, isLoading, currentDialogId, items }) => {
-  //const isLoading =  true;
-  //console.log('isLoading: ' + isLoading);
-  console.log(items);
-
   return <div
     ref={blockRef}
     className={classNames('messages', {'messages__loading': isLoading})}
